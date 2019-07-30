@@ -1,0 +1,16 @@
+.form-register {
+
+  :global .ant-form-item {
+    display: flex;
+    justify-content: center;
+  }
+  .register-btn {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1080px) {
+  .form-register {
+    padding: 0 20px;
+  }
+}

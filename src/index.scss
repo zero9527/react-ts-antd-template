@@ -1,0 +1,33 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: PingFangSC-Regular, Microsoft YaHei, sans-serif;
+}
+html,
+body {
+  height: 100%;
+  color: #2b2b2b;
+  font-size: 14px;
+}
+:global #root {
+  height: 100%;
+}
+header,
+aside,
+main,
+div,
+section,
+ul,
+li {
+  box-sizing: border-box;
+}
+
+:global #nprogress {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  .bar {
+    height: 3px;
+    background: lightblue;
+  }
+}
