@@ -38,7 +38,7 @@ class LoginRegister extends React.Component<Props, State> {
           logo
         </div>
         {/* canvas背景 */}
-        <div id="particles-js" />
+        <div id="particles-js" style={{width: '100%', height: '100%'}} />
         <div className={style['login-register-wrapper']}>
           <div className={style.tabbar}>
             <span
