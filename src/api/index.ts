@@ -5,7 +5,7 @@ import * as NProgress from 'nprogress';
 
 axios.defaults.timeout = 10000;
 axios.defaults.baseURL = process.env.NODE_ENV === 'production'
-  ? 'http://192.168.0.5:2333'
+  ? 'http://192.168.0.5:2333' // 这里设置实际项目的生产环境地址
   : '';
 
 let startFlag = false; // loadingStart的标志

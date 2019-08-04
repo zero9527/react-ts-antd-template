@@ -7,7 +7,7 @@ import Router from './router';
 import './index.scss';
 // import registerServiceWorker from './registerServiceWorker'; 
 
-const Loading = () => <div>loading...</div>;
+const Loading = () => (<div>loading...</div>);
 
 AxiosConfig(); // 初始化 axios
 
