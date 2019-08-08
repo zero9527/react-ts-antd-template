@@ -283,6 +283,15 @@ module.exports = {
               },
               {
                 loader: require.resolve('sass-loader'),
+              },
+              {
+                loader: 'sass-resources-loader',
+                options: {
+                  resources: [
+                    // 配置全局 scss 变量
+                    path.resolve(__dirname, './../src/assets/css/variable.scss'),
+                  ],
+                }
               }
             ]
           },

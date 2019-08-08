@@ -13,7 +13,7 @@ function Home(props: Props) {
     <div className={style.home}>
       <div className={style.content}>
           欢迎使用 react-ts-antd-template
-          <div>count: { props.count }</div>
+          <div className={style.count}>count: { props.count }</div>
           <Button onClick={props.addCount}>count++</Button>
       </div>
     </div>
