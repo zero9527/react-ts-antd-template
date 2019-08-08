@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Login from './login';
 import Register from './register';
-import particlesJS from './particlesJS';
+import ParticlesJS from '@/components/particlesJS';
 import style from './login-register.scss';
 
 interface Props {
@@ -20,10 +20,6 @@ class LoginRegister extends React.Component<Props, State> {
     super(props);
   }
 
-  public componentDidMount() {
-    particlesJS('particles-js');
-  }
-
   // 注册成功
   public onRegisterDone = () => {
     this.setState({
@@ -38,7 +34,7 @@ class LoginRegister extends React.Component<Props, State> {
           logo
         </div>
         {/* canvas背景 */}
-        <div id="particles-js" style={{width: '100%', height: '100%'}} />
+        <ParticlesJS />
         <div className={style['login-register-wrapper']}>
           <div className={style.tabbar}>
             <span

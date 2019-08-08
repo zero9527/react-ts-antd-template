@@ -41,6 +41,7 @@
     "react": "^16.8.6",
     "react-dev-utils": "^9.0.1",
     "react-dom": "^16.8.6",
+    "react-particles-js": "^2.7.0",
     "react-redux": "^6.0.1",
     "react-router-dom": "^5.0.1",
     "redux": "^4.0.4",
