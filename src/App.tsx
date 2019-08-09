@@ -1,25 +1,43 @@
 import * as React from 'react';
-import Home from '@/views/home/index';
-import './App.css';
-// import logo from './logo.svg';
+import Header from '@/components/header';
+import style from './App.scss';
+import { RouteComponentProps, withRouter } from 'react-router';
 
-interface Props {
+interface Props extends RouteComponentProps {
   [prop: string]: any
 }
 
-class App extends React.Component<Props, {}> {
+export interface IState {
+  timer?: any
+}
+
+export type State = Readonly<IState>;
+
+class App extends React.Component<Props, State> {
+  public readonly state: State = {};
+  
   constructor(props: Props) {
     super(props);
-
-    this.state = {};
   }
 
+  // public componentDidMount() {
+  //   setInterval(() => console.log('app'), 1000);
+  // }
+
+  // public componentWillUnmount() {
+  //   console.log('app unmount');
+  // }
+  
   public render() {
-    // const { history, location } = this.props;
+    const { children } = this.props;
+    
     return (
-      <Home />
+      <div className={style.app}>
+        <Header />
+        { children }
+      </div>
     );
   }
 }
 
-export default App;
+export default withRouter(App);

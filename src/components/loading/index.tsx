@@ -6,6 +6,7 @@ const { useState, useEffect } = React;
 interface Props {
   children?: any
 }
+
 /**
  * 路由跳转 Loading组件
  */
@@ -24,7 +25,7 @@ function Loading(props: Props) {
   }, [loadingDot]);
   
   return (
-    <div className={`center-content ${style['loading-wrapper']}`}>
+    <div className={style['loading-wrapper']}>
       <div className={style['loading-content']}>
         {props.children ? (
           <div>{props.children}</div>

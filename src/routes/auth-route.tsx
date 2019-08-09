@@ -8,7 +8,8 @@ export interface AuthRouteProps extends RouteProps {
   path?: string,
   auth?: boolean, // 是否需要权限
   redirectPath?: string, // 重定向后的路由
-  component: ComponentProps<any>
+  render?: any,
+  component?: ComponentProps<any>
 }
 
 const initialProps = {
@@ -22,7 +23,7 @@ const initialProps = {
  * 权限控制处理路由
  */
 const AuthRoute = (props: AuthRouteProps = initialProps) => {
-  const { auth, path, component, key, redirectPath } = props;
+  const { auth, path, component, render, key, redirectPath } = props;
   if (auth && !Cookies.get('auth')) {
     // console.log('path: ', path);
     return (
@@ -43,6 +44,7 @@ const AuthRoute = (props: AuthRouteProps = initialProps) => {
       key={key}
       path={path}
       component={component}
+      render={render}
     />
   )
 }

@@ -9,15 +9,7 @@ import PageRoutes from './routes/index';
 const App = Loadable(() => import('./App'));
 const ErrComp = Loadable(() => import('./views/err-comp/index'));
 
-// 生成 路由集合
-const GetRoutes = () => {
-  const AppRoute = 
-    <AuthRoute 
-      key='app' 
-      path='/' 
-      exact={true}
-      component={App} 
-    />;
+const AppComp = () => {
   const ErrRoute = 
     <AuthRoute 
       key='err404' 
@@ -30,22 +22,27 @@ const GetRoutes = () => {
       key='no-match' 
       component={ErrComp} 
     />;
-  
-  const routes = [AppRoute, ...PageRoutes, ErrRoute, NoMatchRoute];
-  
+
+  const routes = [...PageRoutes, ErrRoute, NoMatchRoute];
+
   return (
-    <Switch>
-      {routes.map(route => route)}
-    </Switch>
+    <AuthRoute 
+      path='/' 
+      render={() => (
+        <App>
+          <Switch>
+            {routes.map(route => route)}
+          </Switch>
+        </App>
+      )}
+    />
   );
 }
-
-// console.log('GetRoutes: ', GetRoutes());
 
 export default function Router() {
   return (
     <HashRouter>
-      <GetRoutes />
+      <AppComp />
     </HashRouter>
   );
 }

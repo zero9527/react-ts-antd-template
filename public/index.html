@@ -20,6 +20,24 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>react-ts-antd-template</title>
+    <script>
+      (function(win, doc) {
+
+        function resizeFn() {
+          var fontSize = 16;
+          var innerW = win.innerWidth;
+          if (innerW < 750) {
+            fontSize = 16 * (innerW / 320);
+          } else {
+            fontSize = 12;
+          }
+          doc.documentElement.style.fontSize = fontSize + 'px';
+        }
+
+        resizeFn();
+        window.addEventListener('resize', resizeFn);
+      })(window, document);
+    </script>
   </head>
   <body>
     <noscript>
@@ -36,6 +54,5 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-    <script src="./js/particles.min.js"></script>
   </body>
 </html>
