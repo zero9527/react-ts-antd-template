@@ -7,6 +7,6 @@ export default [
     key="login" 
     exact={true} 
     path="/login" 
-    component={Loadable(() => import('@/views/login-register/index'))} 
+    component={Loadable(() => import('@/views/login-register'))} 
   />
 ];
