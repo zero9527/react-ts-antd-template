@@ -5,20 +5,15 @@ body {
 }
 html,
 body {
-  height: 100%;
+  height: auto;
+  min-height: 100%;
   color: $color-normal;
   font-size: 14px;
 }
 :global #root {
-  height: 100%;
+  min-height: 100%;
 }
-header,
-aside,
-main,
-div,
-section,
-ul,
-li {
+* {
   box-sizing: border-box;
 }
 
@@ -43,3 +38,9 @@ li {
   padding: 10px 20px;
 }
 
+:global .xy-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
