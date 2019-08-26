@@ -1,5 +1,5 @@
 import * as React from 'react';
-import style from './list-detail.scss';
+import styles from './list-detail.scss';
 
 const { useEffect }  = React;
 
@@ -13,17 +13,17 @@ function ListDetail(props: Props) {
   }, []);
 
   return (
-    <div className={style['list-detail']}>
+    <div className={styles['list-detail']}>
       <div className="xy-center">
         list-detail
         <p>
           id: { props.match.params.id }
         </p>
       </div>
-      <div className={style.line}>sdsdsd -- 1</div>
-      <div className={style.line}>sdsdsd -- 2</div>
-      <div className={style.line}>sdsdsd -- 3</div>
-      <div className={style.line}>sdsdsd -- 4</div>
+      <div className={styles.line}>sdsdsd -- 1</div>
+      <div className={styles.line}>sdsdsd -- 2</div>
+      <div className={styles.line}>sdsdsd -- 3</div>
+      <div className={styles.line}>sdsdsd -- 4</div>
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { withRouter, RouteComponentProps } from 'react-router';
-import style from './list.scss';
+import styles from './list.scss';
 
 const { useState, useEffect } = React;
 
@@ -20,55 +20,7 @@ const arr: ListItem[] = [
   { id: 5, text: 'list5ldskfoiquqiquwwww' },
   { id: 6, text: 'list6skdjfnsdnfsdnfsdf' },
   { id: 7, text: 'list7jufhfbvbvvvvaaadf' },
-  { id: 8, text: 'list8,lkoqpoqwkeqlwele' },
-  { id: 1, text: 'list1skdjfnsdnfsdnfsdf' },
-  { id: 2, text: 'list2jilkfsjjfnsdnfsdf' },
-  { id: 3, text: 'list3sudfjnfnfnffffsdf' },
-  { id: 4, text: 'list4kl.mlmjjjfsdnfsdf' },
-  { id: 5, text: 'list5ldskfoiquqiquwwww' },
-  { id: 6, text: 'list6skdjfnsdnfsdnfsdf' },
-  { id: 7, text: 'list7jufhfbvbvvvvaaadf' },
-  { id: 8, text: 'list8,lkoqpoqwkeqlwele' },
-  { id: 1, text: 'list1skdjfnsdnfsdnfsdf' },
-  { id: 2, text: 'list2jilkfsjjfnsdnfsdf' },
-  { id: 3, text: 'list3sudfjnfnfnffffsdf' },
-  { id: 4, text: 'list4kl.mlmjjjfsdnfsdf' },
-  { id: 5, text: 'list5ldskfoiquqiquwwww' },
-  { id: 6, text: 'list6skdjfnsdnfsdnfsdf' },
-  { id: 7, text: 'list7jufhfbvbvvvvaaadf' },
-  { id: 8, text: 'list8,lkoqpoqwkeqlwele' },
-  { id: 1, text: 'list1skdjfnsdnfsdnfsdf' },
-  { id: 2, text: 'list2jilkfsjjfnsdnfsdf' },
-  { id: 3, text: 'list3sudfjnfnfnffffsdf' },
-  { id: 4, text: 'list4kl.mlmjjjfsdnfsdf' },
-  { id: 5, text: 'list5ldskfoiquqiquwwww' },
-  { id: 6, text: 'list6skdjfnsdnfsdnfsdf' },
-  { id: 7, text: 'list7jufhfbvbvvvvaaadf' },
-  { id: 8, text: 'list8,lkoqpoqwkeqlwele' },
-  { id: 1, text: 'list1skdjfnsdnfsdnfsdf' },
-  { id: 2, text: 'list2jilkfsjjfnsdnfsdf' },
-  { id: 3, text: 'list3sudfjnfnfnffffsdf' },
-  { id: 4, text: 'list4kl.mlmjjjfsdnfsdf' },
-  { id: 5, text: 'list5ldskfoiquqiquwwww' },
-  { id: 6, text: 'list6skdjfnsdnfsdnfsdf' },
-  { id: 7, text: 'list7jufhfbvbvvvvaaadf' },
-  { id: 8, text: 'list8,lkoqpoqwkeqlwele' },
-  { id: 1, text: 'list1skdjfnsdnfsdnfsdf' },
-  { id: 2, text: 'list2jilkfsjjfnsdnfsdf' },
-  { id: 3, text: 'list3sudfjnfnfnffffsdf' },
-  { id: 4, text: 'list4kl.mlmjjjfsdnfsdf' },
-  { id: 5, text: 'list5ldskfoiquqiquwwww' },
-  { id: 6, text: 'list6skdjfnsdnfsdnfsdf' },
-  { id: 7, text: 'list7jufhfbvbvvvvaaadf' },
-  { id: 8, text: 'list8,lkoqpoqwkeqlwele' },
-  { id: 1, text: 'list1skdjfnsdnfsdnfsdf' },
-  { id: 2, text: 'list2jilkfsjjfnsdnfsdf' },
-  { id: 3, text: 'list3sudfjnfnfnffffsdf' },
-  { id: 4, text: 'list4kl.mlmjjjfsdnfsdf' },
-  { id: 5, text: 'list5ldskfoiquqiquwwww' },
-  { id: 6, text: 'list6skdjfnsdnfsdnfsdf' },
-  { id: 7, text: 'list7jufhfbvbvvvvaaadf' },
-  { id: 8, text: 'list8,lkoqpoqwkeqlwele' },
+  { id: 8, text: 'list8,lkoqpoqwkeqlwele' }
 ];
 
 let scrollTop: number = 0;
@@ -119,7 +71,7 @@ function List(props: Props) {
   }
 
   return (
-    <div className={style.list}>
+    <div className={styles.list}>
       <section 
         className="list-content" 
         style={{ 
@@ -133,7 +85,7 @@ function List(props: Props) {
             return (
               <div 
                 key={index} 
-                className={style['list-item']}
+                className={styles['list-item']}
                 onClick={() => toDetail(item.id)}
               >
                 { item.text }

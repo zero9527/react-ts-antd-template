@@ -1,6 +1,8 @@
 import * as React from 'react';
 import Header from '@/components/header';
-import style from './App.scss';
+import Sidebar from '@/components/sidebar';
+import Footer from '@/components/footer';
+import styles from './App.scss';
 import { RouteComponentProps, withRouter } from 'react-router';
 
 interface Props extends RouteComponentProps {
@@ -32,9 +34,11 @@ class App extends React.Component<Props, State> {
     const { children } = this.props;
     
     return (
-      <div className={style.app}>
+      <div className={styles.app}>
         <Header />
+        <Sidebar />
         { children }
+        <Footer />
       </div>
     );
   }

@@ -1,0 +1,24 @@
+.sidebar {
+  height: 100vh;
+  max-width: 200px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 60px 0;
+  border-right: 1px solid #eee;
+  overflow: hidden auto;
+
+  .side-item {
+    display: block;
+    padding: 12px 50px;
+    color: $color_gray;
+    &:hover {
+      cursor: pointer;
+      color: $color_theme;
+    }
+  }
+  
+  .side-active {
+    color: $color_theme;
+  }
+}

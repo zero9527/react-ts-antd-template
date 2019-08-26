@@ -262,7 +262,7 @@ module.exports = {
                 options: {
                   resources: [
                     // 配置全局 scss 变量
-                    path.resolve(__dirname, './../src/assets/css/variable.scss'),
+                    path.resolve(__dirname, './../src/utils/variable.scss'),
                   ],
                 }
               }

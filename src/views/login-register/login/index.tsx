@@ -4,7 +4,7 @@ import { RouteComponentProps } from 'react-router';
 import { withRouter } from 'react-router';
 import * as Cookies from 'js-cookie';
 import Api from '@/api/login-register';
-import style from './login.scss';
+import styles from './login.scss';
 
 interface Props extends RouteComponentProps {
   form: any,
@@ -62,7 +62,7 @@ class LoginForm extends React.Component<Props, State> {
   public render() {
     const { getFieldDecorator } = this.props.form;
     return (
-      <Form onSubmit={this.handleSubmit} className={style['login-form']}>
+      <Form onSubmit={this.handleSubmit} className={styles['login-form']}>
         <Form.Item>
           {getFieldDecorator('username', {
             rules: [{ required: true, message: '请输入您的账号！' }],
@@ -91,10 +91,10 @@ class LoginForm extends React.Component<Props, State> {
             valuePropName: 'checked',
             initialValue: true,
           })(<Checkbox>Remember me</Checkbox>)} */}
-          <Button type="primary" size="large" htmlType="submit" className={style['login-form-button']}>
+          <Button type="primary" size="large" htmlType="submit" className={styles['login-form-button']}>
             登录
           </Button>
-          <a className={`${style.block} ${style['text-right']}`} href="">忘记密码</a>
+          <a className={`${styles.block} ${styles['text-right']}`} href="">忘记密码</a>
         </Form.Item>
       </Form>
     );

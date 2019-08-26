@@ -2,7 +2,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { iRootState, Dispatch } from '@/store-rematch';
 import { Button } from 'antd';
-import style from './home.scss';
+import styles from './home.scss';
 
 interface Props {
   [prop: string]: any
@@ -10,10 +10,10 @@ interface Props {
 
 function Home(props: Props) {
   return (
-    <div className={style.home}>
-      <div className={style.content}>
+    <div className={styles.home}>
+      <div className={styles.content}>
           react-ts-antd-template
-          <div className={style.count}>count: { props.count }</div>
+          <div className={styles.count}>count: { props.count }</div>
           <Button onClick={props.addCount}>count++</Button>
       </div>
     </div>

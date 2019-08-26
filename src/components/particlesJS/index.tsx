@@ -7,7 +7,7 @@ function ParticlesJS() {
       position: 'absolute',
       top: '0',
       left: '0',
-      background: '#666'
+      background: '#1890da'
     }} />
   )
 }

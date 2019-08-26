@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { withRouter } from 'react-router-dom';
-import style from './err-comp.scss';
+import styles from './err-comp.scss';
 
 interface Props {
   [prop: string]: any
@@ -13,8 +13,8 @@ class ErrComp extends React.Component<Props> {
 
   public render() {
     return (
-      <section className={style.error}>
-        <div className={style.content}>Error 404!</div>
+      <section className={styles.error}>
+        <div className={styles.content}>Error 404!</div>
       </section>
     )
   }

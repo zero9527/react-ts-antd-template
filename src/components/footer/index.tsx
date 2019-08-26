@@ -1,20 +1,19 @@
 import * as React from 'react';
-import styles from './header.scss';
+import styles from './footer.scss';
 
 interface Props {
   [prop: string]: any
 }
 
-function Header(props: Props) {
+function Footer(props: Props) {
   
   return (
     <section className={styles.header}>
       <div className="center-content">
-        <div>LOGO</div>
-        <div>HEADER</div>
+        <div>FOOTER</div>
       </div>
     </section>
   );
 }
 
-export default Header;
+export default Footer;

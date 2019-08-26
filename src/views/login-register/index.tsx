@@ -2,7 +2,7 @@ import * as React from 'react';
 import Login from './login';
 import Register from './register';
 import ParticlesJS from '@/components/particlesJS';
-import style from './login-register.scss';
+import styles from './login-register.scss';
 
 interface Props {
   [prop: string]: any
@@ -29,20 +29,20 @@ class LoginRegister extends React.Component<Props, State> {
 
   public render() {
     return (
-      <section className={style.login}>
-        <div className={style.logo}>
+      <section className={styles.login}>
+        <div className={styles.logo}>
           logo
         </div>
         {/* canvas背景 */}
         <ParticlesJS />
-        <div className={style['login-register-wrapper']}>
-          <div className={style.tabbar}>
+        <div className={styles['login-register-wrapper']}>
+          <div className={styles.tabbar}>
             <span
-              className={`${style['tab-item']} ${this.state.type === 'login' ? style['tabbar-active'] : ''}`}
+              className={`${styles['tab-item']} ${this.state.type === 'login' ? styles['tabbar-active'] : ''}`}
               onClick={() => this.setState({ type: 'login' })}
             >登录</span>
             <span 
-              className={`${style['tab-item']} ${this.state.type === 'register' ? style['tabbar-active'] : ''}`}
+              className={`${styles['tab-item']} ${this.state.type === 'register' ? styles['tabbar-active'] : ''}`}
               onClick={() => this.setState({ type: 'register' })}
             >注册</span>
           </div>

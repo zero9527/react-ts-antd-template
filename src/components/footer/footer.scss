@@ -1,14 +1,14 @@
 .header {
   width: 100%;
   position: fixed;
-  top: 0;
+  bottom: 0;
   left: 0;
   color: #fff;
-  font-size: 18px;
+  font-size: 12px;
   background: $color-theme;
   z-index: 10;
   :global .center-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
   }
 }

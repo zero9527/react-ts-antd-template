@@ -10,7 +10,7 @@ import {
 } from 'antd';
 import Api from '@/api/login-register';
 import { phoneRegx } from '@/utils/utils';
-import style from './register.scss';
+import styles from './register.scss';
 
 interface Props {
   onRegisterDone: () => void,
@@ -116,7 +116,7 @@ class Register extends React.Component<Props, State> {
     );
 
     return (
-      <Form {...formItemLayout} className={style['form-register']} onSubmit={this.handleSubmit}>
+      <Form {...formItemLayout} className={styles['form-register']} onSubmit={this.handleSubmit}>
         <Form.Item>
           {getFieldDecorator('username', {
             rules: [
@@ -188,7 +188,7 @@ class Register extends React.Component<Props, State> {
         </Form.Item>
         
         <Form.Item {...tailFormItemLayout}>
-          <Button type="primary" htmlType="submit" size="large" className={style['register-btn']}>
+          <Button type="primary" htmlType="submit" size="large" className={styles['register-btn']}>
             注册
           </Button>
         </Form.Item>

@@ -2,7 +2,7 @@ import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { act } from 'react-dom/test-utils';
 import List from './index';
-import style from './list.scss';
+import styles from './list.scss';
 
 let container: any;
 
@@ -21,7 +21,7 @@ it('can render and update a list', () => {
   act(() => {
     ReactDOM.render(<List />, container);
   });
-  const listItem = container.querySelector(`${style['list-item']}`);
+  const listItem = container.querySelector(`${styles['list-item']}`);
   // expect(label.textContent).toBe('You clicked 0 times');
   // expect(document.title).toBe('You clicked 0 times');
 

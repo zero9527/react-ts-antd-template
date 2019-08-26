@@ -1,5 +1,5 @@
 import * as React from 'react';
-import style from './loading.scss';
+import styles from './loading.scss';
 
 const { useState, useEffect } = React;
 
@@ -25,8 +25,8 @@ function Loading(props: Props) {
   }, [loadingDot]);
   
   return (
-    <div className={style['loading-wrapper']}>
-      <div className={style['loading-content']}>
+    <div className={styles['loading-wrapper']}>
+      <div className={styles['loading-content']}>
         {props.children ? (
           <div>{props.children}</div>
         ) : (
