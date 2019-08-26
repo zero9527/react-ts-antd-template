@@ -4,6 +4,7 @@ import Loadable from '@loadable/component';
 
 const List = Loadable(() => import('@/views/list'));
 
+// 实现列表保留滚动条位置的写法
 // list
 export default [
   <AuthRoute 

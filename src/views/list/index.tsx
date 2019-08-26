@@ -1,8 +1,8 @@
 import * as React from 'react';
-import style from './list.scss';
 import { withRouter, RouteComponentProps } from 'react-router';
+import style from './list.scss';
 
-const { useState, useEffect, useMemo } = React;
+const { useState, useEffect } = React;
 
 interface Props extends RouteComponentProps {
   [prop: string]: any
@@ -13,6 +13,54 @@ export interface ListItem {
 }
 
 const arr: ListItem[] = [
+  { id: 1, text: 'list1skdjfnsdnfsdnfsdf' },
+  { id: 2, text: 'list2jilkfsjjfnsdnfsdf' },
+  { id: 3, text: 'list3sudfjnfnfnffffsdf' },
+  { id: 4, text: 'list4kl.mlmjjjfsdnfsdf' },
+  { id: 5, text: 'list5ldskfoiquqiquwwww' },
+  { id: 6, text: 'list6skdjfnsdnfsdnfsdf' },
+  { id: 7, text: 'list7jufhfbvbvvvvaaadf' },
+  { id: 8, text: 'list8,lkoqpoqwkeqlwele' },
+  { id: 1, text: 'list1skdjfnsdnfsdnfsdf' },
+  { id: 2, text: 'list2jilkfsjjfnsdnfsdf' },
+  { id: 3, text: 'list3sudfjnfnfnffffsdf' },
+  { id: 4, text: 'list4kl.mlmjjjfsdnfsdf' },
+  { id: 5, text: 'list5ldskfoiquqiquwwww' },
+  { id: 6, text: 'list6skdjfnsdnfsdnfsdf' },
+  { id: 7, text: 'list7jufhfbvbvvvvaaadf' },
+  { id: 8, text: 'list8,lkoqpoqwkeqlwele' },
+  { id: 1, text: 'list1skdjfnsdnfsdnfsdf' },
+  { id: 2, text: 'list2jilkfsjjfnsdnfsdf' },
+  { id: 3, text: 'list3sudfjnfnfnffffsdf' },
+  { id: 4, text: 'list4kl.mlmjjjfsdnfsdf' },
+  { id: 5, text: 'list5ldskfoiquqiquwwww' },
+  { id: 6, text: 'list6skdjfnsdnfsdnfsdf' },
+  { id: 7, text: 'list7jufhfbvbvvvvaaadf' },
+  { id: 8, text: 'list8,lkoqpoqwkeqlwele' },
+  { id: 1, text: 'list1skdjfnsdnfsdnfsdf' },
+  { id: 2, text: 'list2jilkfsjjfnsdnfsdf' },
+  { id: 3, text: 'list3sudfjnfnfnffffsdf' },
+  { id: 4, text: 'list4kl.mlmjjjfsdnfsdf' },
+  { id: 5, text: 'list5ldskfoiquqiquwwww' },
+  { id: 6, text: 'list6skdjfnsdnfsdnfsdf' },
+  { id: 7, text: 'list7jufhfbvbvvvvaaadf' },
+  { id: 8, text: 'list8,lkoqpoqwkeqlwele' },
+  { id: 1, text: 'list1skdjfnsdnfsdnfsdf' },
+  { id: 2, text: 'list2jilkfsjjfnsdnfsdf' },
+  { id: 3, text: 'list3sudfjnfnfnffffsdf' },
+  { id: 4, text: 'list4kl.mlmjjjfsdnfsdf' },
+  { id: 5, text: 'list5ldskfoiquqiquwwww' },
+  { id: 6, text: 'list6skdjfnsdnfsdnfsdf' },
+  { id: 7, text: 'list7jufhfbvbvvvvaaadf' },
+  { id: 8, text: 'list8,lkoqpoqwkeqlwele' },
+  { id: 1, text: 'list1skdjfnsdnfsdnfsdf' },
+  { id: 2, text: 'list2jilkfsjjfnsdnfsdf' },
+  { id: 3, text: 'list3sudfjnfnfnffffsdf' },
+  { id: 4, text: 'list4kl.mlmjjjfsdnfsdf' },
+  { id: 5, text: 'list5ldskfoiquqiquwwww' },
+  { id: 6, text: 'list6skdjfnsdnfsdnfsdf' },
+  { id: 7, text: 'list7jufhfbvbvvvvaaadf' },
+  { id: 8, text: 'list8,lkoqpoqwkeqlwele' },
   { id: 1, text: 'list1skdjfnsdnfsdnfsdf' },
   { id: 2, text: 'list2jilkfsjjfnsdnfsdf' },
   { id: 3, text: 'list3sudfjnfnfnffffsdf' },
@@ -40,27 +88,29 @@ function List(props: Props) {
   }, []);
 
   // 监听列表与详情的切换
-  useMemo(() => {
-    if (props.location.pathname === '/list') {
-      window.addEventListener('scroll', onScroll);
-      setTimeout(() => {
-        document.documentElement.scrollTop = scrollTop;
-      }, 0);
+  useEffect(() => {
+    if (props.location.pathname.includes("/list/detail/") ) {
+      console.log('scrollTop -- detail: ', scrollTop);
+      document.documentElement.scrollTop = 0;
 
     } else {
-      document.documentElement.scrollTop = 0;
+      window.addEventListener('scroll', onScroll);
+      setTimeout(() => {
+        console.log('scrollTop -- list: ', scrollTop);
+        document.documentElement.scrollTop = scrollTop;
+      }, 0);
     }
   }, [props.location.pathname]);
 
   // 监听滚动
   function onScroll() {
     // location.pathname 因为是同一组件，所以有问题，所以用原生js的
-    if (location.hash === '#/list') {
-      if (scrollTop > document.documentElement.scrollTop) return;
-      scrollTop = document.documentElement.scrollTop;
+    if (location.hash.includes("/list/detail/") ) {
+      window.removeEventListener('scroll', onScroll);
       
     } else {
-      window.removeEventListener('scroll', onScroll);
+      // if (scrollTop > document.documentElement.scrollTop) return;
+      scrollTop = document.documentElement.scrollTop;
     }
   }
 
@@ -72,7 +122,11 @@ function List(props: Props) {
     <div className={style.list}>
       <section 
         className="list-content" 
-        style={{ display: props.location.pathname === '/list' ? 'block' : 'none' }}
+        style={{ 
+          display: props.location.pathname.includes("/list/detail/") 
+          ? 'none' 
+          : 'block' 
+        }}
       >
         {
           list.map((item, index) => {

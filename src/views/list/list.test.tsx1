@@ -1,0 +1,40 @@
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import { act } from 'react-dom/test-utils';
+import List from './index';
+import style from './list.scss';
+
+let container: any;
+
+beforeEach(() => {
+  container = document.createElement('div');
+  document.body.appendChild(container);
+});
+
+afterEach(() => {
+  document.body.removeChild(container);
+  container = null;
+});
+
+it('can render and update a list', () => {
+  // 首先测试 render 和 componentDidMount
+  act(() => {
+    ReactDOM.render(<List />, container);
+  });
+  const listItem = container.querySelector(`${style['list-item']}`);
+  // expect(label.textContent).toBe('You clicked 0 times');
+  // expect(document.title).toBe('You clicked 0 times');
+
+  // 再测试 render 和 componentDidUpdate
+  act(() => {
+    listItem.dispatchEvent(new MouseEvent('click', {bubbles: true}));
+    document.documentElement.scrollTop = 100;
+  });
+  expect(document.documentElement.scrollTop).toBe(0);
+  
+  // 返回列表
+  act(() => {
+    history.back();
+  });
+  expect(document.documentElement.scrollTop).toBe(100);
+});
