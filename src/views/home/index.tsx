@@ -4,11 +4,11 @@ import { iRootState, Dispatch } from '@/store-rematch';
 import { Button } from 'antd';
 import styles from './home.scss';
 
-interface Props {
+interface IProps {
   [prop: string]: any
 }
 
-function Home(props: Props) {
+function Home(props: IProps) {
   return (
     <div className={styles.home}>
       <div className={styles.content}>

@@ -3,14 +3,14 @@ import styles from './loading.scss';
 
 const { useState, useEffect } = React;
 
-interface Props {
+interface IProps {
   children?: any
 }
 
 /**
  * 路由跳转 Loading组件
  */
-function Loading(props: Props) {
+function Loading(props: IProps) {
   const [loadingDot, setLoadingDot] = useState('');
 
   useEffect(() => {

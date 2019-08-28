@@ -12,7 +12,7 @@ import Api from '@/api/login-register';
 import { phoneRegx } from '@/utils/utils';
 import styles from './register.scss';
 
-interface Props {
+interface IProps {
   onRegisterDone: () => void,
   form: any,
 }
@@ -24,10 +24,10 @@ export type State = Readonly<typeof initialState>;
 
 const { Option } = Select;
 
-class Register extends React.Component<Props, State> {
+class Register extends React.Component<IProps, State> {
   public readonly state: State = initialState;
 
-  public constructor(props: Props) {
+  public constructor(props: IProps) {
     super(props);
   }
 
@@ -197,5 +197,5 @@ class Register extends React.Component<Props, State> {
   }
 }
 
-const WrappedRegister = Form.create<Props>({ name: 'register' })(Register);
+const WrappedRegister = Form.create<IProps>({ name: 'register' })(Register);
 export default WrappedRegister;

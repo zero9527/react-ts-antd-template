@@ -22,12 +22,12 @@
     <title>react-ts-antd-template</title>
     <script>
       (function(win, doc) {
-
         function resizeFn() {
-          var fontSize = 16;
-          var innerW = win.innerWidth;
-          if (innerW < 750) {
-            fontSize = 16 * (innerW / 320);
+          // iw/750 === fontSize/10, 
+          // 设计稿 750 下 rem 除以 10，也就是设计稿 100px，css 里面 10rem
+          var iw = win.innerWidth*2;
+          if (iw <= 850) {
+            fontSize = 10 * (iw / 750);
           } else {
             fontSize = 12;
           }

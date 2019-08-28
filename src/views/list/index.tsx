@@ -4,15 +4,15 @@ import styles from './list.scss';
 
 const { useState, useEffect } = React;
 
-interface Props extends RouteComponentProps {
+interface IProps extends RouteComponentProps {
   [prop: string]: any
 }
-export interface ListItem {
+export interface IListItem {
   id: number,
   text: string
 }
 
-const arr: ListItem[] = [
+const arr: IListItem[] = [
   { id: 1, text: 'list1skdjfnsdnfsdnfsdf' },
   { id: 2, text: 'list2jilkfsjjfnsdnfsdf' },
   { id: 3, text: 'list3sudfjnfnfnffffsdf' },
@@ -26,7 +26,7 @@ const arr: ListItem[] = [
 let scrollTop: number = 0;
 
 // list
-function List(props: Props) {
+function List(props: IProps) {
   const [list, setList] = useState([{ id: 1, text: '' }]);
 
   useEffect(() => {

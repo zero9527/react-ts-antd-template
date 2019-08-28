@@ -1,10 +1,10 @@
-export interface DateFormateParams {
+export interface IDateFormateParams {
   timeStamp: number,
   splitChar?: string // 日期分隔符
 }
 
 // 时间格式化
-export function dateFormate({ timeStamp, splitChar='-' }: DateFormateParams) {
+export function dateFormate({ timeStamp, splitChar='-' }: IDateFormateParams) {
   const time: Date = new Date(timeStamp);
 
   const Y = time.getFullYear();

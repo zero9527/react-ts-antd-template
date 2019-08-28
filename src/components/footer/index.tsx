@@ -1,11 +1,11 @@
 import * as React from 'react';
 import styles from './footer.scss';
 
-interface Props {
+interface IProps {
   [prop: string]: any
 }
 
-function Footer(props: Props) {
+function Footer(props: IProps) {
   
   return (
     <section className={styles.header}>

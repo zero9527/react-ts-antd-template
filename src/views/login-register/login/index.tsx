@@ -6,7 +6,7 @@ import * as Cookies from 'js-cookie';
 import Api from '@/api/login-register';
 import styles from './login.scss';
 
-interface Props extends RouteComponentProps {
+interface IProps extends RouteComponentProps {
   form: any,
   [prop: string]: any
 }
@@ -17,10 +17,10 @@ const initialState = {
 
 export type State = Readonly<typeof initialState>;
 
-class LoginForm extends React.Component<Props, State> {
+class LoginForm extends React.Component<IProps, State> {
   public readonly state: State = initialState;
 
-  public constructor(props: Props) {
+  public constructor(props: IProps) {
     super(props);
   }
 
@@ -101,6 +101,6 @@ class LoginForm extends React.Component<Props, State> {
   }
 }
 
-const WrappedLoginForm = Form.create<Props>({ name: 'normal_login' })(LoginForm);
+const WrappedLoginForm = Form.create<IProps>({ name: 'normal_login' })(LoginForm);
 
 export default withRouter(WrappedLoginForm as any);

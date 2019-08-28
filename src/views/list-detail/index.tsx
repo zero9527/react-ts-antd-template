@@ -3,11 +3,11 @@ import styles from './list-detail.scss';
 
 const { useEffect }  = React;
 
-interface Props {
+interface IProps {
   [prop: string]: any
 }
 
-function ListDetail(props: Props) {
+function ListDetail(props: IProps) {
   useEffect(() => {
     console.log('detail');
   }, []);

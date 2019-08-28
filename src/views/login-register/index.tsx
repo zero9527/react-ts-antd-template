@@ -4,7 +4,7 @@ import Register from './register';
 import ParticlesJS from '@/components/particlesJS';
 import styles from './login-register.scss';
 
-interface Props {
+interface IProps {
   [prop: string]: any
 }
 const initialState = {
@@ -13,10 +13,10 @@ const initialState = {
 
 export type State = Readonly<typeof initialState>;
 
-class LoginRegister extends React.Component<Props, State> {
+class LoginRegister extends React.Component<IProps, State> {
   public readonly state: State = initialState;
 
-  public constructor(props: Props) {
+  public constructor(props: IProps) {
     super(props);
   }
 

@@ -3,7 +3,7 @@ import { ComponentProps } from 'react';
 import { Route, Redirect, RouteProps } from 'react-router';
 import * as Cookies from 'js-cookie';
 
-export interface AuthRouteProps extends RouteProps {
+export interface IAuthRouteProps extends RouteProps {
   key?: string|number,
   path?: string,
   auth?: boolean, // 是否需要权限
@@ -22,7 +22,7 @@ const initialProps = {
 /**
  * 权限控制处理路由
  */
-const AuthRoute = (props: AuthRouteProps = initialProps) => {
+const AuthRoute = (props: IAuthRouteProps = initialProps) => {
   const { auth, path, component, render, key, redirectPath } = props;
   if (auth && !Cookies.get('auth')) {
     // console.log('path: ', path);
