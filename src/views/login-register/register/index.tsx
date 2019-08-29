@@ -39,7 +39,7 @@ class Register extends React.Component<IProps, State> {
         console.log('Received values of form: ', values);
 
         const { username: name, password} = values;
-        const { error_code, message: msg }: any = await Api.register({ name, password, confirm_pwd: password });
+        const { error_code, msg }: any = await Api.register({ name, password, confirm_pwd: password });
         
         if (error_code === 1) {
           message.success('注册成功，请稍后登录！');

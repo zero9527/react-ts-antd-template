@@ -20,7 +20,7 @@ interface ISidebarItem {
 
 function Sidebar(props: IProps) {
   const sideList1: ISidebarItem[] = [
-    { label: '首页', link: '/', icon: faHome, subLink: [] },
+    { label: '首页', link: '/', icon: faHome, subLink: ['/home'] },
     { label: '列表', link: '/list', icon: faList, subLink: ['/list/detail/'] },
     { label: '登录', link: '/login', icon: faUserCircle, subLink: [] }
   ];

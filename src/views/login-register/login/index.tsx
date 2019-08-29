@@ -37,23 +37,21 @@ class LoginForm extends React.Component<IProps, State> {
         // console.log('Received values of form: ', values);
         
         const { username: name, password} = values;
-        const { error_code, data, message: msg }: any = await Api.login({ name, password });
+        const { error_code, data, msg }: any = await Api.login({ name, password });
         
         if (error_code === 1) {
           message.success('登录成功！');
           Cookies.set('auth', data.access_token);
-          // localStorage.setItem('auth', data.access_token);
 
-          // 加载登录前页面
+          // 跳转到登录前页面
           setTimeout(() => {
-            this.props.history.push(that.state.fromUrl || '/home');
+            that.props.history.push(that.state.fromUrl || '/');
           }, 300);
           
         } else {
           // 登录失败或登录状态过期
           message.error(msg);
           Cookies.remove('auth');
-          // localStorage.removeItem('auth');
         }
       }
     });
