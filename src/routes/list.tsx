@@ -10,6 +10,7 @@ export default [
   <AuthRoute 
     key="list" 
     // exact={true} 
+    // auth={true}
     path="/list" 
     // component={Loadable(() => import('@/views/list'))} 
     render={() => {

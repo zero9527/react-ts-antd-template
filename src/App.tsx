@@ -26,12 +26,22 @@ class App extends React.Component<Props, State> {
     super(props);
   }
 
+  // public async componentDidMount() {
+  //   const { default: _ } = await import(/* webpackPreload */'lodash');
+  //   _.map([
+  //     { num: 1 },
+  //     { num: 2 },
+  //     { num: 3 },
+  //     { num: 4 },
+  //   ], (item) => item.num * 10);
+  // }
+
   public render() {
-    console.log(this.props);
+    // console.log(this.props);
     return (
       <div className={styles.app}>
         <AppContext.Provider value={defaultContext}>
-          <Header text="tteexxtt" />
+          <Header text="tteexxtt" ddsssddd="dasad" />
           <Sidebar />
           { this.props.children }
           <Footer />

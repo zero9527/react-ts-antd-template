@@ -33,7 +33,7 @@ const AuthRoute = (props: IAuthRouteProps = initialProps) => {
         render={() => 
           <Redirect to={{
             pathname: redirectPath || '/login',
-            search: '?fromUrl='+path
+            search: path !== '/' ? '?fromUrl='+path : ''
           }} />
         } 
       />
