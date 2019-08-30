@@ -12,9 +12,9 @@ function Home(props: IProps) {
   return (
     <div className={styles.home}>
       <div className={styles.content}>
-          react-ts-antd-template
-          <div className={styles.count}>count: { props.count }</div>
-          <Button onClick={props.addCount}>count++</Button>
+        react-ts-antd-template
+        <div className={styles.count}>count: { props.count }</div>
+        <Button onClick={props.addCount}>count++</Button>
       </div>
     </div>
   )

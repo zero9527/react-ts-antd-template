@@ -1,7 +1,8 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import { withRouter, RouteComponentProps } from 'react-router';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FormattedMessage } from 'react-intl';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHome, faList, faUserCircle } from '@fortawesome/free-solid-svg-icons';
 import styles from './sidebar.scss';
 
@@ -12,7 +13,7 @@ interface IProps extends RouteComponentProps {
 }
 
 interface ISidebarItem {
-  label: string,
+  label: React.ReactElement,
   link: string,
   subLink: string[],
   icon: any
@@ -20,13 +21,13 @@ interface ISidebarItem {
 
 function Sidebar(props: IProps) {
   const sideList1: ISidebarItem[] = [
-    { label: '首页', link: '/', icon: faHome, subLink: ['/home'] },
-    { label: '列表', link: '/list', icon: faList, subLink: ['/list/detail/'] },
-    { label: '登录', link: '/login', icon: faUserCircle, subLink: [] }
+    { label: <FormattedMessage id="home.home" />, link: '/', icon: faHome, subLink: ['/home'] },
+    { label: <FormattedMessage id="home.list" />, link: '/list', icon: faList, subLink: ['/list/detail/'] },
+    { label: <FormattedMessage id="home.login" />, link: '/login', icon: faUserCircle, subLink: [] }
   ];
 
   // const [sideList, setSideList] = useState([]);
-  // useState 相当于 以下的useReducer 写法的封装
+  // useState 相当于 以下的 useReducer 写法的封装
   const [sideList, setSideList] = useReducer((state, action) => {
     return [
       ...state,
