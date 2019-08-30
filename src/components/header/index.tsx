@@ -6,7 +6,8 @@ import styles from './header.scss';
 const { useEffect } = React;
 
 interface IProps {
-  text: string,
+  lang: string,
+  onLangChange: (locale: string) => void,
   [prop: string]: any
 }
 // withRouter不会传递除 history/location/match 之外的 props，
@@ -22,7 +23,19 @@ function Header(props: IPropsWithRoute) {
     <section className={styles.header}>
       <div className="center-content">
         <div>LOGO</div>
-        <div>HEADER, { props.appname }, {props.text}</div>
+        <div>
+          HEADER
+          <div className={styles.langsection}>
+            <span 
+              className={`${styles.lang} ${props.lang === 'zh' ? styles.active : ''}`} 
+              onClick={() => props.onLangChange('zh')}
+            >中文</span>
+            <span 
+              className={`${styles.lang} ${props.lang === 'en' ? styles.active : ''}`} 
+              onClick={() => props.onLangChange('en')}
+            >English</span>
+          </div>
+        </div>
       </div>
     </section>
   );

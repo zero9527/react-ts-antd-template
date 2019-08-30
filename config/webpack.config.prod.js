@@ -83,7 +83,8 @@ const config = {
     splitChunks: {
       chunks: 'all'
     },
-    usedExports: true
+    // tree shaking，与 package.json 中 "sideEffects": false 配合使用
+    // usedExports: true
   },
   resolve: {
     // This allows you to set a fallback for where Webpack should look for modules.
