@@ -12,9 +12,15 @@ function Home(props: IProps) {
   return (
     <div className={styles.home}>
       <div className={styles.content}>
-        react-ts-antd-template
-        <div className={styles.count}>count: { props.count }</div>
-        <Button onClick={props.addCount}>count++</Button>
+        <p>react-ts-antd-template</p>
+        <p className={styles.count}>
+          count: { props.count } &emsp;
+          <Button onClick={props.addCount}>count++</Button>
+        </p>
+        <p className={styles.count}>
+          countAsync: { props.countAsync } &emsp;
+          <Button onClick={props.setCountAsync}>countAsync</Button>
+        </p>
       </div>
     </div>
   )
@@ -22,12 +28,14 @@ function Home(props: IProps) {
 
 const mapState = (state: iRootState) => {
   return {
-    count: state.common.count
+    count: state.common.count,
+    countAsync: state.common.countAsync
   }
 }
 const mapDispatch = (dispatch: Dispatch) => {
   return {
-    addCount: () => dispatch({ type: 'common/addCount' })
+    addCount: () => dispatch({ type: 'common/addCount' }),
+    setCountAsync: () => dispatch({ type: 'common/setCountAsync', payload: new Date().getSeconds() }),
   }
 }
 
