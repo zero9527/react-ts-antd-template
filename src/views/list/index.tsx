@@ -34,7 +34,6 @@ function List(props: IProps) {
     window.addEventListener('scroll', onScroll);
 
     return () => {
-      // console.log('list unmount');
       window.removeEventListener('scroll', onScroll);
     }
   }, []);
@@ -42,13 +41,13 @@ function List(props: IProps) {
   // 监听列表与详情的切换
   useEffect(() => {
     if (props.location.pathname.includes("/list/detail/") ) {
-      console.log('scrollTop -- detail: ', scrollTop);
+      // console.log('scrollTop -- detail: ', scrollTop);
       document.documentElement.scrollTop = 0;
 
     } else {
       window.addEventListener('scroll', onScroll);
       setTimeout(() => {
-        console.log('scrollTop -- list: ', scrollTop);
+        // console.log('scrollTop -- list: ', scrollTop);
         document.documentElement.scrollTop = scrollTop;
       }, 0);
     }
@@ -61,7 +60,6 @@ function List(props: IProps) {
       window.removeEventListener('scroll', onScroll);
       
     } else {
-      // if (scrollTop > document.documentElement.scrollTop) return;
       scrollTop = document.documentElement.scrollTop;
     }
   }

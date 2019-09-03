@@ -4,12 +4,14 @@ import { createModel } from '@rematch/core';
 export interface ICommonState {
   appName: string,
   isMobile: boolean,
-  count: number
+  count: number,
+  countAsync: number
 }
 const initialState: ICommonState = {
   appName: 'react-ts-mdnote',
   isMobile: false,
-  count: 0
+  count: 0,
+  countAsync: 0
 };
 const common = createModel({
   state: initialState,
@@ -25,9 +27,20 @@ const common = createModel({
         ...state,
         count: state.count + 1
       }
+    },
+    setCount(state: ICommonState, payload: number) {
+      return {
+        ...state,
+        countAsync: payload
+      }
     }
   },
-  effects: {}
+  effects: (dispatch) => ({
+    async setCountAsync(payload, rootState) {
+      await new Promise(resolve => setTimeout(resolve, 1000))
+      dispatch.common.setCount(payload)
+    }
+  })
 });
 
 export {
