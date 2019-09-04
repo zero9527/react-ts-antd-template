@@ -6,6 +6,9 @@
 # build
 /build
 
+# electron
+/dist
+
 .vscode
 yarn.lock
 *.log
