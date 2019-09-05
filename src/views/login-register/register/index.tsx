@@ -9,7 +9,7 @@ import {
   message
 } from 'antd';
 import Api from '@/api/login-register';
-import { phoneRegx } from '@/utils/utils';
+import { phoneRegx } from '@/utils';
 import styles from './register.scss';
 
 interface IProps {
