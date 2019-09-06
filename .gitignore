@@ -9,6 +9,5 @@
 # electron
 /dist
 
-.vscode
 yarn.lock
 *.log

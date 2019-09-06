@@ -172,15 +172,6 @@ module.exports = {
                 ]
               }
             }
-            // use: [
-            //   {
-            //     loader: require.resolve('ts-loader'),
-            //     options: {
-            //       // disable type checker - we will use it in fork plugin
-            //       transpileOnly: true,
-            //     },
-            //   },
-            // ],
           },
           // "postcss" loader applies autoprefixer to our CSS.
           // "css" loader resolves paths in CSS and adds assets as dependencies.
