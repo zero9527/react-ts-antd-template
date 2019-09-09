@@ -66,6 +66,19 @@ const config = {
         .relative(paths.appSrc, info.absoluteResourcePath)
         .replace(/\\/g, '/'),
   },
+  externals: {
+    'axios': 'axios',
+    'lodash' : {
+      commonjs: 'lodash',
+      amd: 'lodash',
+      root: '_' // 指向全局变量
+    },
+    'react': 'React',
+    'react-dom': 'ReactDOM',
+    'react-router': 'ReactRouter',
+    // 'react-router-dom': 'ReactRouterDOM',
+    'react-redux': 'ReactRedux',
+  },
   optimization: {
     splitChunks: {
       chunks: 'all'

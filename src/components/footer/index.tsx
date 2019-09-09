@@ -8,7 +8,7 @@ interface IProps {
 function Footer(props: IProps) {
   
   return (
-    <section className={styles.header}>
+    <section className={styles.footer}>
       <div className="center-content">
         <div>FOOTER</div>
       </div>
