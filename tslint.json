@@ -21,6 +21,10 @@
     "jsx-no-lambda": false,
     // true: 不会变化的变量强制使用const
     "prefer-const": false,
+
+    "variable-name": false,
+    "prefer-const": false,
+    "no-empty": false,
     "no-implicit-dependencies": ["optional", ["src"]]
   },
   "jsRules": {
@@ -31,6 +35,9 @@
     "interface-name": false,
     //需要按字母顺序引入模块
     "ordered-imports": false,
+    "variable-name": false,
+    "prefer-const": false,
+    "no-empty": false,
     "object-literal-sort-keys": false
   }
 }
