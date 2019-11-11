@@ -3,6 +3,7 @@
     "react-app"
   ],
   "plugins": [
+    "transform-decorators-legacy", 
     [
       "import",
       {

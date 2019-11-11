@@ -19,6 +19,28 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
+    <style>
+      #white-loading {
+        width: 100%;
+        position: absolute;
+        top: 114px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 22px;
+        color: #42bd56;
+        z-index: -1;
+        transform: translateZ(0);
+        will-change: auto;
+      }
+      #white-loading img {
+        width: 30px;
+        height: 30px;
+        position: relative;
+        margin-top: 10px;
+      }
+    </style>
     <title>react-ts-antd-template</title>
     <script>
       (function(win, doc) {
@@ -43,7 +65,8 @@
     <script src="https://cdn.bootcss.com/react-dom/16.8.6/umd/react-dom.production.min.js"></script>
     <script src="https://cdn.bootcss.com/react-router/5.0.1/react-router.min.js"></script>
     <!-- <script src="https://cdn.bootcss.com/react-router-dom/5.0.1/react-router-dom.min.js"></script> -->
-    <script src="https://cdn.bootcss.com/react-redux/7.1.1/react-redux.min.js"></script>
+    <script src="https://cdn.bootcss.com/mobx/4.14.0/mobx.umd.min.js"></script>
+    <script src="https://cdn.bootcss.com/mobx-react/5.2.0/custom.min.js"></script>
     <script src="https://cdn.bootcss.com/lodash.js/4.17.15/lodash.core.min.js"></script>
   </head>
   <body>
@@ -51,6 +74,10 @@
       You need to enable JavaScript to run this app.
     </noscript>
     <div id="root"></div>
+    <div id="white-loading">
+      <div class="app-name">react-ts-antd-template</div>
+      <img src="%PUBLIC_URL%/images/loading.gif" alt="loading">
+    </div>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

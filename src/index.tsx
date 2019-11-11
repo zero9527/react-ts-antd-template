@@ -1,7 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import store from '@/store-rematch';
+import { Provider } from 'mobx-react';
+import store from '@/store';
 import AxiosConfig from './api';
 import Router from './router';
 import './index.scss';
@@ -13,7 +13,7 @@ AxiosConfig(); // 初始化 axios
 
 ReactDOM.render(
   <React.Suspense fallback={<Loading />}>
-    <Provider store={store}>
+    <Provider {...store}>
       <Router />
     </Provider>
   </React.Suspense>,

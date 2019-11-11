@@ -31,6 +31,8 @@ class App extends React.Component<Props, State> {
   
   constructor(props: Props) {
     super(props);
+    const whiteLoading = document.querySelector('#white-loading') as HTMLDivElement;
+    whiteLoading.style.display = 'none';
   }
   
   public onLangChange(locale: string) {

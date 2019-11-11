@@ -77,7 +77,8 @@ const config = {
     'react-dom': 'ReactDOM',
     'react-router': 'ReactRouter',
     // 'react-router-dom': 'ReactRouterDOM',
-    'react-redux': 'ReactRedux',
+    'mobx': 'mobx',
+    'react-mobx': 'ReactMobx',
   },
   optimization: {
     splitChunks: {

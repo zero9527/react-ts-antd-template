@@ -20,10 +20,10 @@ function ListDetail(props: IProps) {
           id: { props.match.params.id }
         </p>
       </div>
-      <div className={styles.line}>sdsdsd -- 1</div>
-      <div className={styles.line}>sdsdsd -- 2</div>
-      <div className={styles.line}>sdsdsd -- 3</div>
-      <div className={styles.line}>sdsdsd -- 4</div>
+      <div className={styles.line}>detail -- { props.match.params.id }</div>
+      <div className={styles.line}>detail -- { props.match.params.id }</div>
+      <div className={styles.line}>detail -- { props.match.params.id }</div>
+      <div className={styles.line}>detail -- { props.match.params.id }</div>
     </div>
   )
 }
