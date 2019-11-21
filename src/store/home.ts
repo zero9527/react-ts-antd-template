@@ -2,7 +2,7 @@ import * as mobx from 'mobx';
 
 // 禁止在 action 外直接修改 state 
 mobx.configure({ enforceActions: "observed"});
-const { observable, action, computed, runInAction } = mobx;
+const { observable, action, computed, runInAction, autorun } = mobx;
 
 let cache = sessionStorage.getItem('homeStore');
 
@@ -56,12 +56,10 @@ class Home {
 
 const homeStore = new Home();
 
-mobx.spy((event) => {
+autorun(() => {
   // 数据变化后触发，数据缓存
-  if (event.type === 'reaction') {
-    const obj = mobx.toJS(homeStore);
-    sessionStorage.setItem('homeStore', JSON.stringify(obj));
-  }
+  const obj = mobx.toJS(homeStore);
+  sessionStorage.setItem('homeStore', JSON.stringify(obj));
 })
 
 export type homeStoreType = typeof homeStore;
