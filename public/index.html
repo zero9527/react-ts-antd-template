@@ -60,6 +60,7 @@
         window.addEventListener('resize', resizeFn);
       })(window, document);
     </script>
+    <% if (!isDev) { %>
     <script src="https://cdn.bootcss.com/axios/0.19.0/axios.min.js"></script>
     <script src="https://cdn.bootcss.com/react/16.8.6/umd/react.production.min.js"></script>
     <script src="https://cdn.bootcss.com/react-dom/16.8.6/umd/react-dom.production.min.js"></script>
@@ -68,6 +69,7 @@
     <script src="https://cdn.bootcss.com/mobx/4.14.0/mobx.umd.min.js"></script>
     <script src="https://cdn.bootcss.com/mobx-react/5.2.0/custom.min.js"></script>
     <script src="https://cdn.bootcss.com/lodash.js/4.17.15/lodash.core.min.js"></script>
+    <% } %>
   </head>
   <body>
     <noscript>

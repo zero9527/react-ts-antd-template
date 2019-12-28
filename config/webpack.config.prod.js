@@ -294,6 +294,9 @@ const config = {
         minifyCSS: true,
         minifyURLs: true,
       },
+      templateParameters: {
+        isDev: process.env.NODE_ENV === 'development'
+      }
     }),
     new MiniCssExtractPlugin({
       filename: "static/css/[name].[contenthash:8].css",
