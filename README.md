@@ -1,4 +1,7 @@
-# react-ts-antd-template
+# 使用更新版本 create-react-app+babel-loader替换awesome-typescript-loader： [md-note](https://github.com/zero9527/md-note)
+
+> 
+## react-ts-antd-template
 
 ```
 git clone https://github.com/zero9527/react-ts-antd-template.git
